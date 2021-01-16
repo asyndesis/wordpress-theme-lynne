@@ -79,11 +79,11 @@
         </div>
         <!--/entryInfo-->
         <div class="entry">
-            <h3>
+            <h3 style="padding-top:8px">
                 <?php if ($theType !== '') { ?>
-                <span class="<?php echo $theType ?> "></span>
+                <span style="margin-top:-3px" class="<?php echo $theType ?> "></span>
                 <?php } ?>
-                <div style="display:inline-block"><?php the_title();?></div>
+                <?php the_title();?>
             </h3>
             <?php the_excerpt(); ?>
         </div>
