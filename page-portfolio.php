@@ -85,7 +85,11 @@
                 <?php } ?>
                 <?php the_title();?>
             </h3>
-            <?php the_content(); ?>
+            <?php if (get_the_content() !== '') { 
+              the_content();
+            } else{
+              the_excerpt();
+            } ?>
         </div>
         <!--/entry-->
     </div>
