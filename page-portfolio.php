@@ -79,9 +79,9 @@
         <!--/entryInfo-->
         <div class="entry">
             <h3>
-                <span class="<?php echo $theType ?>"></span><?php the_title();?>
+                <span class="<?php echo $theType ?> "></span><?php the_title();?>
             </h3>
-            <?php the_content(); ?>
+            <?php the_excerpt(); ?>
         </div>
         <!--/entry-->
     </div>
