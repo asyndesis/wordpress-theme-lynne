@@ -3,31 +3,27 @@
 ?>
 <?php get_header(); ?>
 <div id="scrollContent" class="portfolio">
-  <?php if (have_posts()): ?>
-  <?php while (have_posts()): ?>
-     <?php the_post(); ?>
-    <h2><?php the_title(); ?></h2>
-  <?php endwhile; ?>
- <?php endif; ?>
-  <?php $loop = new WP_Query(
+    <?php include TEMPLATEPATH . "/inc/loop.php"; ?>
+    <?php $loop = new WP_Query(
     "post_type=portfolio&orderby=menu_order&order=ASC&posts_per_page=999"
   ); ?>
     <?php while ($loop->have_posts()):
-      $loop->the_post(); ?>
+    $loop->the_post(); ?>
     <?php
-    $terms = get_the_terms($post->id, "medium");
-    if ($terms != null) {
-      foreach ($terms as $term) {
-        $theSlug = $term->slug;
-      }
-    } else {
-      $theSlug = "";
+  $terms = get_the_terms($post->id, "medium");
+  if ($terms != null) {
+    foreach ($terms as $term) {
+      $theSlug = $term->slug;
     }
-    ?>
+  } else {
+    $theSlug = "";
+  }
+  jsLog(get_fields());
+  ?>
     <div class="post <?php if ($terms != null) {
       echo "folio";
     } ?>" id="post-<?php the_ID(); ?>">
-            <div class="entryInfo">
+        <div class="entryInfo">
             <?php if ($theSlug === "video") {
 
               if (get_field("the_video")) {
@@ -39,7 +35,7 @@
               $theLarge[2] = 380;
               $theThumb = get_template_directory_uri() . "/images/reel.jpg";
               ?>
-                    <textarea class="theImageURL">
+            <textarea class="theImageURL">
                     <div style="background:#000 url('<?php bloginfo(
                       "template_url"
                     ); ?>/images/loadingBlack.gif') center center no-repeat;">
@@ -48,7 +44,7 @@
           </video>
                     </div>
                     </textarea>
-                <?php
+            <?php
             } elseif ($theSlug === "audio") {
 
               if (get_field("the_audio")) {
@@ -59,7 +55,7 @@
               $theLarge[1] = 480;
               $theLarge[2] = 27;
               ?>
-                    <textarea class="theImageURL">
+            <textarea class="theImageURL">
                     <div style="background:#000 url('<?php bloginfo(
                       "template_url"
                     ); ?>/images/loadingBlack.gif') center center no-repeat;">
@@ -68,7 +64,7 @@
           </audio>
                     </div>
                     </textarea>
-                <?php
+            <?php
             } elseif ($theSlug === "embed") {
 
               if (get_field("the_embed")) {
@@ -79,10 +75,10 @@
               $theLarge[1] = 480;
               $theLarge[2] = 380;
               ?>
-                    <textarea class="theImageURL">
+            <textarea class="theImageURL">
                     <?php echo $theLarge[0]; ?>
                     </textarea>
-                <?php
+            <?php
             } elseif ($theSlug === "iframe") {
 
               if (get_field("the_iframe")) {
@@ -93,10 +89,10 @@
               $theLarge[1] = 480;
               $theLarge[2] = 380;
               ?>
-                    <textarea class="theImageURL">
+            <textarea class="theImageURL">
                     <?php echo $theLarge[0]; ?>
                     </textarea>
-                <?php
+            <?php
             } elseif ($theSlug === "print") {
               if (get_field("the_image")) {
                 $theLarge = wp_get_attachment_image_src(
@@ -108,21 +104,26 @@
                 $theLarge[1] = "";
                 $theLarge[2] = "";
               } ?>
-          <textarea class="theImageURL" height="<?php echo $theLarge[2]; ?>" width="<?php echo $theLarge[1]; ?>"><?php echo $theLarge[0]; ?></textarea>
-                <?php
+            <textarea class="theImageURL" height="<?php echo $theLarge[2]; ?>"
+                width="<?php echo $theLarge[1]; ?>"><?php echo $theLarge[0]; ?></textarea>
+            <?php
             } ?>
-            </div><!--/entryInfo-->
-      <div class="entry">
-              <h3><?php
+        </div>
+        <!--/entryInfo-->
+        <div class="entry">
+            <h3><?php
               if ($theSlug != "") { ?><span class="<?php echo $theSlug .
   " "; ?>"></span><?php }
               the_title();
               ?></h3>
-        <?php the_excerpt(); ?>
-      </div><!--/entry-->
-    </div><!--/post-->
+            <?php the_excerpt(); ?>
+        </div>
+        <!--/entry-->
+    </div>
+    <!--/post-->
     <?php
-    endwhile; ?>
+  endwhile; ?>
     <?php wp_reset_postdata(); ?>
- </div><!--/scrollContent-->
+</div>
+<!--/scrollContent-->
 <?php get_footer(); ?>
