@@ -47,6 +47,9 @@
     ?>
 
     <div class="post folio" id="post-<?php the_ID(); ?>">
+        <div style="display:none;">
+            <?php var_dump($theFields); ?>
+        </div>
         <div>
             <?php if ($theType == 'video') { ?>
             <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">>
