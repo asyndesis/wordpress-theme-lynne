@@ -6,14 +6,7 @@
   //add_action( 'wp_enqueue_scripts', 'headStuff' );
 /*------------------------------------------------------------------------------------------------------------------------*/
 function headStuff(){
-	if ( !is_admin() ) {
-		$tmpDir = get_template_directory_uri();
-			wp_deregister_script( 'jquery' );
-      wp_register_script( 'jquery',$tmpDir.'/scripts/jquery-1.10.2.min.js', array(), null, false );
-      wp_register_script( 'jquery-migrate',$tmpDir.'/scripts/jquery-migrate-1.2.1.min.js', array('jquery'), null, false );
-      wp_enqueue_script( 'jquery' );
-      wp_enqueue_script( 'jquery-migrate' );
-	}
+
 }
 /*------------------------------------------------------------------------------------------------------------------------*/
   function removeHeadLinks() {
