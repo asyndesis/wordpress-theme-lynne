@@ -10,8 +10,8 @@
     <?php while ($loop->have_posts()): $loop->the_post(); ?>
     <?php
       $theFields = get_fields();
-      $defaultHeight = 380;
-      $defaultWidth = 480;
+      $defaultHeight = 480;
+      $defaultWidth = 720;
       $theThumb = get_template_directory_uri() . "/images/reel.jpg";
       $theItem = '';
       $theType = '';
@@ -53,7 +53,7 @@
         </div>
         <div>
             <?php if ($theType == 'video') { ?>
-            <textarea class="theImageURL">
+            <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
           <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;">
             <video width="100%" height="100%" poster="<?php echo $theThumb; ?>" controls autoplay>
               <source src="<?php echo $theItem; ?>" type="video/mp4">
@@ -69,7 +69,7 @@
           </div>
         </textarea>
             <?php } else if ($theType === "embed" || $theType === "iframe") { ?>
-            <textarea class="theImageURL">
+            <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
             <?php echo $theItem; ?>
           </textarea>
             <?php } else if ($theType === "image") { ?>
