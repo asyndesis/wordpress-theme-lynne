@@ -47,55 +47,56 @@
       }
     ?>
 
-    <div class="post folio" id="post-<?php the_ID(); ?>" <div style="display:none;">
-        <?php var_dump($theFields); ?>
-    </div>
-    <div>
-        <?php if ($theType == 'video') { ?>
-        <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">>
+    <div class="post folio" id="post-<?php the_ID(); ?>">
+        <div style="display:none;">
+            <?php var_dump($theFields); ?>
+        </div>
+        <div>
+            <?php if ($theType == 'video') { ?>
+            <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
           <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;">
             <video width="100%" height="100%" poster="<?php echo $theThumb; ?>" controls autoplay>
               <source src="<?php echo $theItem[0]; ?>" type="video/mp4">
             </video>
           </div>
        </textarea>
-        <?php } else if ($theType === "audio") { ?>
-        <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
+            <?php } else if ($theType === "audio") { ?>
+            <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
           <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;">
             <audio width="100%" height="100%" controls>
               <source src="<?php echo $theItem; ?>" type="audio/mpeg">
             </audio>
           </div>
         </textarea>
-        <?php } else if ($theType === "embed" || $theType === "iframe") { ?>
-        <textarea class="theImageURL">
+            <?php } else if ($theType === "embed" || $theType === "iframe") { ?>
+            <textarea class="theImageURL">
             <?php echo $theItem; ?>
           </textarea>
-        <?php } else if ($theType === "image") { ?>
-        <textarea class="theImageURL" height="<?php echo $theItem[2]; ?>"
-            width="<?php echo $theItem[1]; ?>"><?php echo $theItem[0]; ?></textarea>
-        <?php } ?>
-    </div>
-    <!--/entryInfo-->
-    <div class="entry">
-        <h3 style="padding-top:8px">
-            <?php if (!empty($theType)) { ?>
-            <span style="margin-top:-3px" class="<?php echo $theType ?> "></span>
+            <?php } else if ($theType === "image") { ?>
+            <textarea class="theImageURL" height="<?php echo $theItem[2]; ?>"
+                width="<?php echo $theItem[1]; ?>"><?php echo $theItem[0]; ?></textarea>
             <?php } ?>
-            <?php the_title();?>
-        </h3>
-        <?php if (get_the_content() !== '') { 
+        </div>
+        <!--/entryInfo-->
+        <div class="entry">
+            <h3 style="padding-top:8px">
+                <?php if (!empty($theType)) { ?>
+                <span style="margin-top:-3px" class="<?php echo $theType ?> "></span>
+                <?php } ?>
+                <?php the_title();?>
+            </h3>
+            <?php if (get_the_content() !== '') { 
               the_content();
             } else{
               the_excerpt();
             } ?>
+        </div>
+        <!--/entry-->
     </div>
-    <!--/entry-->
-</div>
-<!--/post-->
-<?php
+    <!--/post-->
+    <?php
   endwhile; ?>
-<?php wp_reset_postdata(); ?>
+    <?php wp_reset_postdata(); ?>
 </div>
 <!--/scrollContent-->
 <?php get_footer(); ?>
