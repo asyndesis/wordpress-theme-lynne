@@ -15,7 +15,7 @@
       $theThumb = get_template_directory_uri() . "/images/reel.jpg";
       $theItem = '';
       $theType = '';
-      if (!empty($theFields['the_image'])) {
+      if (!empty($theFields['the_image'])  && isset($theFields['the_image'])) {
         $theType = 'image';
         $theThumb = ['','','']; 
         $theItem = ['','',''];
@@ -28,20 +28,20 @@
           $theItem = $wpImage;
         }
       }
-      if (!empty($theFields['the_video'])) {
+      if (!empty($theFields['the_video']) && isset($theFields['the_video'])) {
         $theType = 'video';
         $theItem = get_field('the_video');
       }
-      if (!empty($theFields['the_audio'])) {
+      if (!empty($theFields['the_audio']) && isset($theFields['the_audio'])) {
         $theType = 'audio';
         $theItem = get_field('the_audio');
         $defaultHeight = 72;
       }
-      if (!empty($theFields['the_embed'])) {
+      if (!empty($theFields['the_embed']) && isset($theFields['the_embed'])) {
         $theType = 'embed';
         $theItem = get_field('the_embed');
       }
-      if (!empty($theFields['the_iframe'])) {
+      if (!empty($theFields['the_iframe']) && isset($theFields['the_iframe'])) {
         $theType = 'iframe';
         $theItem = get_field('the_iframe');
       }
