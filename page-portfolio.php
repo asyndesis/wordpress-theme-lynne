@@ -15,7 +15,7 @@
       $theThumb = get_template_directory_uri() . "/images/reel.jpg";
       $theItem = '';
       $theType = '';
-      if (empty($theFields['the_image'])) {
+      if (!empty($theFields['the_image'])) {
         $theType = 'image';
         $theThumb = ['','','']; 
         $theItem = ['','',''];
@@ -23,25 +23,25 @@
           get_field("the_image"),
           "medium"
         );
-        if (empty($wpImage)){
+        if (!empty($wpImage)){
           $theThumb = $wpImage;
           $theItem = $wpImage;
         }
       }
-      if (empty($theFields['the_video'])) {
+      if (!empty($theFields['the_video'])) {
         $theType = 'video';
         $theItem = get_field('the_video');
       }
-      if (empty($theFields['the_audio'])) {
+      if (!empty($theFields['the_audio'])) {
         $theType = 'audio';
         $theItem = get_field('the_audio');
         $defaultHeight = 72;
       }
-      if (empty($theFields['the_embed'])) {
+      if (!empty($theFields['the_embed'])) {
         $theType = 'embed';
         $theItem = get_field('the_embed');
       }
-      if (empty($theFields['the_iframe'])) {
+      if (!empty($theFields['the_iframe'])) {
         $theType = 'iframe';
         $theItem = get_field('the_iframe');
       }
@@ -80,7 +80,7 @@
         <!--/entryInfo-->
         <div class="entry">
             <h3 style="padding-top:8px">
-                <?php if (empty($theType) && $theType !== '') { ?>
+                <?php if (!empty($theType)) { ?>
                 <span style="margin-top:-3px" class="<?php echo $theType ?> "></span>
                 <?php } ?>
                 <?php the_title();?>
