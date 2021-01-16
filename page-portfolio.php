@@ -17,9 +17,8 @@
     }
   } else {
     $theSlug = "";
-  }
-  echo get_fields();
-  ?>
+  }?>
+    <div style="display:none"> <?php var_dump(get_fields()); ?></div>
     <div class="post <?php if ($terms != null) {
       echo "folio";
     } ?>" id="post-<?php the_ID(); ?>">
