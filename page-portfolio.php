@@ -34,6 +34,7 @@
       if (isset($theFields['the_audio'])) {
         $theType = 'audio';
         $theItem = get_field('the_audio');
+        $defaultHeight = 72;
       }
       if (isset($theFields['the_embed'])) {
         $theType = 'embed';
@@ -51,12 +52,12 @@
             <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">>
           <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;">
             <video width="100%" height="100%" poster="<?php echo $theThumb; ?>" controls autoplay>
-              <source src="<?php echo $theItem; ?>" type="video/mp4">
+              <source src="<?php echo $theItem[0]; ?>" type="video/mp4">
             </video>
           </div>
        </textarea>
             <?php } else if ($theType === "audio") { ?>
-            <textarea class="theImageURL">
+            <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
           <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;">
             <audio width="100%" height="100%" controls>
               <source src="<?php echo $theItem; ?>" type="audio/mpeg">
