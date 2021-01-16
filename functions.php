@@ -5,9 +5,6 @@
   add_action( 'init', 'awards_init' );
   //add_action( 'wp_enqueue_scripts', 'headStuff' );
 /*------------------------------------------------------------------------------------------------------------------------*/
-function jsLog(c){
-  echo '<script>console.log('.c.');</script>';
-}
 function headStuff(){
 	if ( !is_admin() ) {
 		$tmpDir = get_template_directory_uri();

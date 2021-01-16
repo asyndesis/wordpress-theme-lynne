@@ -18,7 +18,7 @@
   } else {
     $theSlug = "";
   }
-  jsLog(get_fields());
+  echo get_fields();
   ?>
     <div class="post <?php if ($terms != null) {
       echo "folio";
