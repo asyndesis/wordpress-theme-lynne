@@ -27,20 +27,20 @@
           $theItem = $wpImage;
         }
       }
-      if (isset($theFields['the_video'])) {
+      if (isset($theFields['the_video']) && $theFields['the_video'] !== '') {
         $theType = 'video';
         $theItem = get_field('the_video');
       }
-      if (isset($theFields['the_audio'])) {
+      if (isset($theFields['the_audio']) && $theFields['the_audio'] !== '') {
         $theType = 'audio';
         $theItem = get_field('the_audio');
         $defaultHeight = 72;
       }
-      if (isset($theFields['the_embed'])) {
+      if (isset($theFields['the_embed']) && $theFields['the_embed'] !== '') {
         $theType = 'embed';
         $theItem = get_field('the_embed');
       }
-      if (isset($theFields['the_iframe'])) {
+      if (isset($theFields['the_iframe']) && $theFields['the_iframe'] !== '') {
         $theType = 'iframe';
         $theItem = get_field('the_iframe');
       }
