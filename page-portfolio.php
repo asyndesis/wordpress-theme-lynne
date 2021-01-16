@@ -53,23 +53,23 @@
         </div>
         <div>
             <?php if ($theType == 'video') { ?>
-            <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
-          <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;">
+            <textarea class="theImageURL">
+          <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
             <video width="100%" height="100%" poster="<?php echo $theThumb; ?>" controls autoplay>
               <source src="<?php echo $theItem; ?>" type="video/mp4">
             </video>
           </div>
        </textarea>
             <?php } else if ($theType === "audio") { ?>
-            <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
-          <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;">
+            <textarea class="theImageURL">
+          <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
             <audio width="100%" height="100%" controls>
               <source src="<?php echo $theItem; ?>" type="audio/mpeg">
             </audio>
           </div>
         </textarea>
             <?php } else if ($theType === "embed" || $theType === "iframe") { ?>
-            <textarea class="theImageURL" height="<?php echo $defaultHeight;?>" width="<?php echo $defaultWidth;?>">
+            <textarea class="theImageURL">
             <?php echo $theItem; ?>
           </textarea>
             <?php } else if ($theType === "image") { ?>
