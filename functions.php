@@ -95,25 +95,25 @@ function headStuff(){
       'supports' => array( 'title', 'editor', 'excerpt' )
     );
     register_post_type( 'portfolio', $args ); /* Register it and move on */
-    $labels = array(
-      'name' => _x( 'Mediums', 'taxonomy general name' ),
-      'singular_name' => _x( 'Medium', 'taxonomy singular name' ),
-      'search_items' =>  __( 'Search Mediums' ),
-      'all_items' => __( 'All Mediums' ),
-      'parent_item' => __( 'Main Medium' ),
-      'parent_item_colon' => __( 'Main Medium:' ),
-      'edit_item' => __( 'Edit Medium' ),
-      'update_item' => __( 'Update Medium' ),
-      'add_new_item' => __( 'Add Medium' ),
-      'new_item_name' => __( 'New Medium Name' ),
-    );
+    // $labels = array(
+    //   'name' => _x( 'Mediums', 'taxonomy general name' ),
+    //   'singular_name' => _x( 'Medium', 'taxonomy singular name' ),
+    //   'search_items' =>  __( 'Search Mediums' ),
+    //   'all_items' => __( 'All Mediums' ),
+    //   'parent_item' => __( 'Main Medium' ),
+    //   'parent_item_colon' => __( 'Main Medium:' ),
+    //   'edit_item' => __( 'Edit Medium' ),
+    //   'update_item' => __( 'Update Medium' ),
+    //   'add_new_item' => __( 'Add Medium' ),
+    //   'new_item_name' => __( 'New Medium Name' ),
+    // );
 
-    register_taxonomy( 'medium', array( 'portfolio' ), array(
-      'hierarchical' => true,
-      'labels' => $labels, /* NOTICE: Here is where the $labels variable is used */
-      'show_ui' => true,
-      'query_var' => true,
-    ));
+    // register_taxonomy( 'medium', array( 'portfolio' ), array(
+    //   'hierarchical' => true,
+    //   'labels' => $labels, /* NOTICE: Here is where the $labels variable is used */
+    //   'show_ui' => true,
+    //   'query_var' => true,
+    // ));
   }
 /*------------------------------------------------------------------------------------------------------------------------*/
 
