@@ -246,8 +246,6 @@ function lightBoxer(t) {
       //PORTFOLIO PAGE
       if ($(this).hasClass("post")) {
         var o = $(this).find(".theImageURL");
-        $("#lighter").height(o.attr("height"));
-        $("#lighter").width(o.attr("width"));
         var theHtml = $.parseHTML(o.text());
         if ($(this).find("h3 span").hasClass("print")) {
           $("#lighter").html(
