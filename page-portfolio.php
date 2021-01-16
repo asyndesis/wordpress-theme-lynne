@@ -36,6 +36,7 @@
         $theType = 'audio';
         $theItem = get_field('the_audio');
         $defaultHeight = 72;
+        $defaultWidth = 140;
       }
       if (!empty($theFields['the_embed']) && isset($theFields['the_embed'])) {
         $theType = 'embed';
