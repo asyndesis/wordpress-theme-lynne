@@ -83,7 +83,7 @@
                 <?php if ($theType !== '') { ?>
                 <span class="<?php echo $theType ?> "></span>
                 <?php } ?>
-                <span><?php the_title();?></span>
+                <div style="display:inline-block"><?php the_title();?></div>
             </h3>
             <?php the_excerpt(); ?>
         </div>
