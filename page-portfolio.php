@@ -14,6 +14,7 @@
       $defaultWidth = 480;
       $theThumb = get_template_directory_uri() . "/images/reel.jpg";
       $theItem = '';
+      $theType = '';
       if (isset($theFields['the_image'])) {
         $theType = 'image';
         $theThumb = ['','','']; 
