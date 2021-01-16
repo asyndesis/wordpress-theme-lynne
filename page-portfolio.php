@@ -53,7 +53,7 @@
             </video>
           </div>
        </textarea>
-        <?php } if ($theType === "audio") { ?>
+        <?php } else if ($theType === "audio") { ?>
         <textarea class="theImageURL">
           <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat;">
             <audio width="100%" height="100%" controls>
@@ -61,11 +61,11 @@
             </audio>
           </div>
         </textarea>
-        <?php } if ($theType === "embed" || $theType === "iframe") { ?>
+        <?php } else if ($theType === "embed" || $theType === "iframe") { ?>
         <textarea class="theImageURL">
             <?php echo $theItem; ?>
           </textarea>
-        <?php } if ($theType === "print") { ?>
+        <?php } else if ($theType === "image") { ?>
         <textarea class="theImageURL" height="<?php echo $theItem[2]; ?>"
             width="<?php echo $theItem[1]; ?>"><?php echo $theItem[0]; ?></textarea>
         <?php
@@ -76,7 +76,7 @@
         <h3>
             <span class="<?php echo $theType ?>"></span><?php the_title();?>
         </h3>
-        <?php the_content(); ?>
+        <?php the_excerpt(); ?>
     </div>
     <!--/entry-->
 </div>
