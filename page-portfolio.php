@@ -13,12 +13,12 @@
       $defaultHeight = 380;
       $defaultWidth = 480;
       $theThumb = get_template_directory_uri() . "/images/reel.jpg";
-      $theItem = '';
-      $theType = '';
+      $theItem = "";
+      $theType = "";
       if (isset($theFields['the_image'])) {
         $theType = 'image';
-        $theThumb = ['','','']; 
-        $theItem = ['','',''];
+        $theThumb = ["","",""]; 
+        $theItem = ["","",""];
         $wpImage = wp_get_attachment_image_src(
           get_field("the_image"),
           "medium"
@@ -28,20 +28,17 @@
           $theItem = $wpImage;
         }
       }
-      if (isset($theFields['the_video']) && $theFields['the_video'] !== '') {
+      if (isset($theFields['the_video']) && $theFields['the_video'] !== "") {
         $theType = 'video';
         $theItem = get_field('the_video');
-      }
-      if (isset($theFields['the_audio']) && $theFields['the_audio'] !== '') {
+      }else if (isset($theFields['the_audio']) && $theFields['the_audio'] !== "") {
         $theType = 'audio';
         $theItem = get_field('the_audio');
         $defaultHeight = 72;
-      }
-      if (isset($theFields['the_embed']) && $theFields['the_embed'] !== '') {
+      }else if (isset($theFields['the_embed']) && $theFields['the_embed'] !== "") {
         $theType = 'embed';
         $theItem = get_field('the_embed');
-      }
-      if (isset($theFields['the_iframe']) && $theFields['the_iframe'] !== '') {
+      }else if (isset($theFields['the_iframe']) && $theFields['the_iframe'] !== "") {
         $theType = 'iframe';
         $theItem = get_field('the_iframe');
       }
@@ -80,12 +77,12 @@
         <!--/entryInfo-->
         <div class="entry">
             <h3 style="padding-top:8px">
-                <?php if ($theType !== '') { ?>
+                <?php if ($theType !== "") { ?>
                 <span style="margin-top:-3px" class="<?php echo $theType ?> "></span>
                 <?php } ?>
                 <?php the_title();?>
             </h3>
-            <?php if (get_the_content() !== '') { 
+            <?php if (get_the_content() !== "") { 
               the_content();
             } else{
               the_excerpt();
