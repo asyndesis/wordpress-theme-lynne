@@ -80,7 +80,7 @@
         <!--/entryInfo-->
         <div class="entry">
             <h3 style="padding-top:8px">
-                <?php if ($theType !== '') { ?>
+                <?php if ($theType != '') { ?>
                 <span style="margin-top:-3px" class="<?php echo $theType ?> "></span>
                 <?php } ?>
                 <?php the_title();?>
