@@ -9,12 +9,13 @@
   ); ?>
     <?php while ($loop->have_posts()): $loop->the_post(); ?>
     <?php
+      $theFields = false;
       $theFields = get_fields();
       $defaultHeight = 380;
       $defaultWidth = 480;
       $theThumb = get_template_directory_uri() . "/images/reel.jpg";
       $theItem = '';
-      $theType = '';
+      $theType = false;
       if (isset($theFields['the_image'])) {
         $theType = 'image';
         $theThumb = ['','','']; 
