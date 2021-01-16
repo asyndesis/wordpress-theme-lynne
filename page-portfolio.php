@@ -80,7 +80,8 @@
         <!--/entryInfo-->
         <div class="entry">
             <h3>
-                <span class="<?php echo $theType ?> "></span><?php the_title();?>
+                <?php if ($theType !== '') { ?><span
+                    class="<?php echo $theType ?> "><?php } ?></span><?php the_title();?>
             </h3>
             <?php the_excerpt(); ?>
         </div>
