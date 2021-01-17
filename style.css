@@ -21,7 +21,6 @@ Version: 1.0
 		3.6 Footer
 
 ***********************************************************************************************/
-
 /* 1. Global Reset
 ===============================================================================================*/
 html,
@@ -112,6 +111,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -127,53 +127,65 @@ section,
 iframe {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+
+blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 /* 2. General Elements
 ===============================================================================================*/
 html {
   overflow-y: scroll;
 }
+
 body {
   background: #2d2317 url("images/bgMain.jpg") repeat;
   font-family: "Just Another Hand", arial, serif;
   font-size: 30px;
   color: #76644a;
 }
+
 a {
   cursor: pointer;
   /*cursor:  url('images/cursor.png') 0 64, pointer;*/
   color: #500;
 }
+
 #commentForm {
   overflow: hidden;
   width: 430px;
 }
+
 #commentForm label {
   padding-left: 2px;
 }
-#commentForm input,
-#commentForm textarea {
+
+#commentForm input {
   margin: 5px;
   border-radius: 4px;
   padding: 10px;
@@ -181,7 +193,14 @@ a {
   border-style: none;
   border: 1px solid #996;
 }
+
 #commentForm textarea {
+  margin: 5px;
+  border-radius: 4px;
+  padding: 10px;
+  background: #fff;
+  border-style: none;
+  border: 1px solid #996;
   width: 400px;
 }
 
@@ -189,6 +208,7 @@ a {
 #commentForm textarea:hover {
   border: 1px solid #c60;
 }
+
 /* 3. Layout
 ===============================================================================================*/
 #ieNotice {
@@ -209,20 +229,24 @@ a {
   border: 1px solid #330;
   padding-left: 6px;
 }
+
 #wrapper {
   width: 1000px;
   margin: 0 auto;
 }
+
 #sideBar {
   padding-top: 20px;
   width: 319px;
 }
+
 #sideBar .widget {
   padding-top: 20px;
   float: left;
   width: 319px;
   height: 263px;
 }
+
 #sideBar .widgetCaption {
   position: absolute;
   overflow: hidden;
@@ -230,6 +254,7 @@ a {
   margin-top: 162px;
   height: 50px;
 }
+
 #sideBar .widgetCaption .widgetCaptionBg {
   position: absolute;
   height: 50px;
@@ -237,6 +262,7 @@ a {
   background: #000;
   z-index: 20;
 }
+
 #sideBar .widgetCaption p {
   text-shadow: 0px 0px 3px #000000;
   padding: 0 30px;
@@ -249,6 +275,7 @@ a {
   font-family: Arial, Helvetica, sans-serif;
   z-index: 30;
 }
+
 #sideBar .widgetPhoto {
   position: absolute;
   background: #000 url("images/loadingBlack.gif") center center no-repeat;
@@ -256,38 +283,46 @@ a {
   height: 212px;
   margin: 23px;
 }
+
 #sideBar .widgetPhoto img {
   cursor: pointer;
 }
+
 .theImageURL {
   display: none;
 }
+
 #lighter {
   background: #fff;
   padding: 5px;
   display: none;
 }
+
 #lighter img,
 #lighter object,
 #lighter embed,
 #lighter div {
   display: block;
 }
+
 #sideBar .frame {
   z-index: 40;
   position: absolute;
   float: left;
   display: block;
 }
+
 #sideBar .fn {
   width: 319px;
   height: 40px;
 }
+
 #sideBar .fw {
   margin-top: 40px;
   width: 34px;
   height: 185px;
 }
+
 #sideBar .fe {
   margin-top: 40px;
   margin-left: 286px;
@@ -295,46 +330,54 @@ a {
   width: 33px;
   height: 185px;
 }
+
 #sideBar .fs {
   margin-top: 225px;
   width: 319px;
   height: 38px;
 }
+
 #scrollWrapper {
   position: relative;
   float: right;
   width: 669px;
 }
+
 #scrollTop {
   height: 50px;
 }
+
 #scrollTop img.scroll {
   position: absolute;
   margin-left: -48px;
   margin-bottom: -148px;
 }
+
 #scrollMiddle {
   overflow: hidden;
   background: url("images/scrollMiddle.png") center top repeat-y;
 }
+
 /*Prevents Chrome from Glitching Scroll and Pen*/
 body:nth-of-type(1) #scrollMiddle {
   height: 80px;
 }
+
 body:nth-of-type(1) #thePen {
   opacity: 0;
 }
+
 #scrollInside {
   padding: 70px 60px 100px 60px;
 }
-#mainLogo {
-}
+
 #mainLogo h1 {
   width: 431px;
   height: 184px;
   background: url("images/lynneSquilla.png") left top no-repeat;
   text-indent: -9999em;
 }
+
 #navIcons {
   float: right;
   margin-left: 20px;
@@ -342,66 +385,80 @@ body:nth-of-type(1) #thePen {
   width: 64px;
   margin-bottom: 150px;
 }
+
 #navIcons .icon {
   text-decoration: none;
   display: block;
   font-size: 0;
   width: 64px;
 }
+
 #navHome {
   height: 82px;
   background: url("images/navIcons.png") 0 0 no-repeat;
 }
+
 #navPortfolio {
   height: 84px;
   background: url("images/navIcons.png") 0px -82px no-repeat;
 }
+
 #navAbout {
   height: 84px;
   background: url("images/navIcons.png") 0px -166px no-repeat;
 }
+
 #navContact {
   height: 84px;
   background: url("images/navIcons.png") 0px -250px no-repeat;
 }
+
 #navAwards {
   height: 84px;
   background: url("images/navIcons.png") 0px -421px no-repeat;
 }
+
 #navTest {
   height: 84px;
   background: url("images/navIcons.png") 0px -505px no-repeat;
 }
+
 #navLinks {
   height: 84px;
   background: url("images/navIcons.png") 0px -334px no-repeat;
 }
+
 #scrollContent {
   width: 440px;
   /*cursor:  url('images/cursor.png') 0 64, pointer;*/
 }
+
 #scrollContent h2 {
   font-size: 38px;
   color: #50422f;
 }
+
 #scrollContent .post {
   margin-top: 10px;
   padding-top: 10px;
   background: url("images/line.png") center top no-repeat;
 }
+
 #scrollContent h3 {
   color: #50422f;
 }
+
 #scrollContent p {
   margin-left: 12px;
   line-height: 40px;
 }
-/*Home*/
+
 #scrollContent.home .post {
   margin: 0;
   padding: 0;
   background: none;
 }
+
 #scrollContent.home p {
   margin-left: 0;
   padding-left: 12px;
@@ -409,23 +466,25 @@ body:nth-of-type(1) #thePen {
   padding-top: 10px;
   background: url("images/line.png") center top no-repeat;
 }
-/*Awards*/
+
 #scrollContent.awards .post {
   margin-left: 30px;
   margin-top: 10px;
   padding-top: 10px;
   background: url("images/line.png") center top no-repeat;
 }
-/*Portfolio*/
+
 #scrollContent.portfolio .post {
   margin-left: 30px;
   margin-top: 10px;
   padding-top: 10px;
   background: url("images/line.png") center top no-repeat;
 }
+
 #scrollContent.portfolio h3 {
   height: 35px;
 }
+
 #scrollContent.portfolio h3 span {
   margin-right: 10px;
   float: left;
@@ -434,21 +493,23 @@ body:nth-of-type(1) #thePen {
   display: block;
   cursor: pointer;
 }
+
 #scrollContent.portfolio h3 span.video {
   background: url("images/portfolioIcons.png") -70px 0px no-repeat;
 }
+
 #scrollContent.portfolio h3 span.print {
   background: url("images/portfolioIcons.png") -35px 0px no-repeat;
 }
+
 #scrollContent.portfolio h3 span.audio {
-  background: url("images/portfolioIcons.png") -0px 0px no-repeat;
+  background: url("images/portfolioIcons.png") 0px 0px no-repeat;
 }
-#scrollContent.portfolio h3 span.embed {
+
+#scrollContent.portfolio h3 span.embed, #scrollContent.portfolio h3 span.iframe {
   background: url("images/portfolioIcons.png") -70px 0px no-repeat;
 }
-#scrollContent.portfolio h3 span.iframe {
-  background: url("images/portfolioIcons.png") -70px 0px no-repeat;
-}
+
 #scrollContent.portfolio .post .bubble {
   padding-right: 1px;
   text-align: center;
@@ -464,14 +525,17 @@ body:nth-of-type(1) #thePen {
   color: #300;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 #scrollBottom {
   height: 50px;
 }
+
 #scrollBottom img.scroll {
   position: absolute;
   margin-left: -66px;
   margin-top: -80px;
 }
+
 #scrollBottom #thePen {
   background: url("images/penInk.png") top left no-repeat;
   height: 287px;
@@ -480,3 +544,4 @@ body:nth-of-type(1) #thePen {
   margin-left: 390px;
   position: absolute;
 }
+/*# sourceMappingURL=style.css.map */
