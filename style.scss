@@ -466,9 +466,8 @@ body:nth-of-type(1) {
       }
     }
     .post .bubble {
-      padding-right: 1px;
+      padding: 4px;
       text-align: center;
-      padding-top: 8px;
       margin-left: -30px;
       margin-top: -24px;
       display: none;
@@ -476,7 +475,7 @@ body:nth-of-type(1) {
       background: url("images/theBubble.png") no-repeat;
       height: 21px;
       width: 107px;
-      font-size: 9px;
+      font-size: 8px;
       color: #300;
       font-family: Arial, Helvetica, sans-serif;
     }
