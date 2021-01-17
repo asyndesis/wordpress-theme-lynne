@@ -113,7 +113,6 @@ function setStage() {
         );
       }
     });
-  //sideBar Images
   imageFader("in");
   $("#sideBar .widget").each(function () {
     lightBoxer($(this));
@@ -243,7 +242,6 @@ function detectIE() {
 function lightBoxer(t) {
   $("#wrapper").append('<div id="lighter"></div>');
   t.each(function () {
-    var arf = false;
     $(this).click(function (e) {
       var o = $(this).find(".theImageURL");
       var theHtml = $.parseHTML(o.text());
@@ -263,9 +261,7 @@ function lightBoxer(t) {
           closeClick: true,
           closeEsc: true,
         });
-        arf = true;
-      }
-      if ($(this).find("h3 span").hasClass("video")) {
+      } else if ($(this).find("h3 span").hasClass("video")) {
         $("#lighter").html(theHtml);
         $("#lighter").lightbox_me({
           centered: true,
@@ -273,9 +269,7 @@ function lightBoxer(t) {
           closeClick: true,
           closeEsc: true,
         });
-        arf = false;
-      }
-      if (
+      } else if (
         $(this).find("h3 span").hasClass("embed") ||
         $(this).find("h3 span").hasClass("iframe")
       ) {
@@ -286,9 +280,7 @@ function lightBoxer(t) {
           closeClick: true,
           closeEsc: true,
         });
-        arf = false;
-      }
-      if ($(this).find("h3 span").hasClass("audio")) {
+      } else if ($(this).find("h3 span").hasClass("audio")) {
         $("#lighter").html(theHtml);
         $("#lighter").lightbox_me({
           centered: true,
@@ -296,11 +288,15 @@ function lightBoxer(t) {
           closeClick: true,
           closeEsc: true,
         });
-        arf = false;
+      } else {
+        $("#lighter").html(theHtml);
+        $("#lighter").lightbox_me({
+          centered: true,
+          destroyOnClose: true,
+          closeClick: true,
+          closeEsc: true,
+        });
       }
-      $("#lighter").click(function (e) {
-        if (arf == true) $("#lighter").trigger("close");
-      });
       e.preventDefault();
     });
   });
