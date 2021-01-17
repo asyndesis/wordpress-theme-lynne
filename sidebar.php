@@ -5,27 +5,26 @@
     <?php if (is_page($post_object->ID)) : ?>
       <div class="widget">
         <div class="widgetPhoto">
+          <?php if(get_field('the_image')): ?>
+            <?php $theThumb = wp_get_attachment_thumb_url(get_field('the_image'), 'thumbnail'); ?>
+            <?php $theLarge = wp_get_attachment_image_src( get_field('the_image'), 'medium' ); ?>
+          <?php endif;?>
           <?php if(get_field('the_caption')): ?>
             <div class="widgetCaption">
               <p><?php echo get_field('the_caption'); ?></p>
             </div>
           <?php endif; ?>
           <?php if(get_field('the_video')): ?>
-          <?php if(get_field('the_image')): ?>
-            <?php $theThumb = wp_get_attachment_thumb_url(get_field('the_image'), 'thumbnail'); ?>
-          <?php else : ?>
-            <?php $theThumb = "http://www.google.com"; ?>
-          <?php endif;?>
-          <video width="100%" height="100%" poster="<?php echo $theThumb; ?>" controls preload="none">
-            <source src="<?php the_field('the_video'); ?>" type="video/mp4">
-          </video>
+            <textarea class="theImageURL">
+              <video width="100%" height="100%" poster="<?php echo $theThumb; ?>" controls preload="none">
+                <source src="<?php the_field('the_video'); ?>" type="video/mp4">
+              </video>
+            </textarea>
           <?php elseif (get_field('the_image')): ?>
-            <?php $theLarge = wp_get_attachment_image_src( get_field('the_image'), 'medium' ); ?>
-            <?php $theThumb = wp_get_attachment_thumb_url(get_field('the_image')); ?>
-          <div class="theImageURL" style="height:<?php echo $theLarge[2]."px"; ?>; width:<?php echo $theLarge[1]."px"; ?>;">
-            <?php echo $theLarge[0] ?>
-          </div>
-          <img src="<?php echo $theThumb; ?>" width='273' height='202' style="margin-top:8px;" />
+            <textarea class="theImageURL" style="height:<?php echo $theLarge[2]."px"; ?>; width:<?php echo $theLarge[1]."px"; ?>;">
+              <?php echo $theLarge[0] ?>
+            </textarea>
+            <img src="<?php echo $theThumb; ?>" width='273' height='202' style="margin-top:8px;" />
           <?php endif; ?>
         </div>
         <img alt="Frame" class="frame fn" src="<?php bloginfo('template_url'); ?>/images/gildedFrameN.png" width="319" height="40" />

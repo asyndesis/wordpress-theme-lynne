@@ -243,64 +243,9 @@ function lightBoxer(t) {
   t.each(function () {
     var arf = false;
     $(this).click(function (e) {
-      //PORTFOLIO PAGE
-      if ($(this).hasClass("post")) {
-        var o = $(this).find(".theImageURL");
-        var theHtml = $.parseHTML(o.text());
-        if ($(this).find("h3 span").hasClass("print")) {
-          $("#lighter").html(
-            "<img src='" +
-              o.html() +
-              "' height='" +
-              o.attr("height") +
-              "px' width='" +
-              o.attr("width") +
-              "px' />"
-          );
-          $("#lighter").lightbox_me({
-            centered: true,
-            destroyOnClose: true,
-            closeClick: true,
-            closeEsc: true,
-          });
-          arf = true;
-        }
-        if ($(this).find("h3 span").hasClass("video")) {
-          $("#lighter").html(theHtml);
-          $("#lighter").lightbox_me({
-            centered: true,
-            destroyOnClose: true,
-            closeClick: true,
-            closeEsc: true,
-          });
-          arf = false;
-        }
-        if (
-          $(this).find("h3 span").hasClass("embed") ||
-          $(this).find("h3 span").hasClass("iframe")
-        ) {
-          $("#lighter").html(theHtml);
-          $("#lighter").lightbox_me({
-            centered: true,
-            destroyOnClose: true,
-            closeClick: true,
-            closeEsc: true,
-          });
-          arf = false;
-        }
-        if ($(this).find("h3 span").hasClass("audio")) {
-          $("#lighter").html(theHtml);
-          $("#lighter").lightbox_me({
-            centered: true,
-            destroyOnClose: true,
-            closeClick: true,
-            closeEsc: true,
-          });
-          arf = false;
-        }
-      } else {
-        //SIDEBAR
-        var o = $(this).parent("div").find(".theImageURL");
+      var o = $(this).find(".theImageURL");
+      var theHtml = $.parseHTML(o.text());
+      if ($(this).find("h3 span").hasClass("print")) {
         $("#lighter").html(
           "<img src='" +
             o.html() +
@@ -317,6 +262,39 @@ function lightBoxer(t) {
           closeEsc: true,
         });
         arf = true;
+      }
+      if ($(this).find("h3 span").hasClass("video")) {
+        $("#lighter").html(theHtml);
+        $("#lighter").lightbox_me({
+          centered: true,
+          destroyOnClose: true,
+          closeClick: true,
+          closeEsc: true,
+        });
+        arf = false;
+      }
+      if (
+        $(this).find("h3 span").hasClass("embed") ||
+        $(this).find("h3 span").hasClass("iframe")
+      ) {
+        $("#lighter").html(theHtml);
+        $("#lighter").lightbox_me({
+          centered: true,
+          destroyOnClose: true,
+          closeClick: true,
+          closeEsc: true,
+        });
+        arf = false;
+      }
+      if ($(this).find("h3 span").hasClass("audio")) {
+        $("#lighter").html(theHtml);
+        $("#lighter").lightbox_me({
+          centered: true,
+          destroyOnClose: true,
+          closeClick: true,
+          closeEsc: true,
+        });
+        arf = false;
       }
       $("#lighter").click(function (e) {
         if (arf == true) $("#lighter").trigger("close");
