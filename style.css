@@ -245,20 +245,15 @@ a {
   float: left;
   width: 319px;
   height: 263px;
+  position: relative;
 }
 
 #sideBar .widgetCaption {
   position: absolute;
   overflow: hidden;
-  width: 280px;
-  margin-top: 162px;
-  height: 50px;
-}
-
-#sideBar .widgetCaption .widgetCaptionBg {
+  width: "100%";
   position: absolute;
-  height: 50px;
-  width: 280px;
+  bottom: 0;
   background: #000;
   z-index: 20;
 }
