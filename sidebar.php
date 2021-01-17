@@ -12,7 +12,7 @@
           ?>
           <?php if(get_field('the_image')): ?>
             <?php $theThumb = wp_get_attachment_thumb_url(get_field('the_image'), 'thumbnail'); ?>
-            <?php $theLarge = wp_get_attachment_image_src( get_field('the_image'), 'medium' ); ?>
+            <?php $theItem = wp_get_attachment_image_src( get_field('the_image'), 'medium' ); ?>
           <?php endif;?>
           <?php if(get_field('the_caption')): ?>
             <div class="widgetCaption">
@@ -39,8 +39,8 @@
             </textarea>
             <img src="<?php echo $theThumb; ?>" width='273' height='202' style="margin-top:8px;" />
           <?php elseif (get_field('the_image')): ?>
-            <textarea class="theImageURL" style="height:<?php echo $theLarge[2]."px"; ?>; width:<?php echo $theLarge[1]."px"; ?>;">
-              <?php echo $theLarge[0] ?>
+            <textarea class="theImageURL" height="<?php echo $theItem[2]; ?>" width="<?php echo $theItem[1]; ?>">
+              <img src="<?php echo $theItem[0]; ?>" height="<?php echo $theItem[2]; ?>" width="<?php echo $theItem[1]; ?>" />
             </textarea>
             <img src="<?php echo $theThumb; ?>" width='273' height='202' style="margin-top:8px;" />
           <?php endif; ?>
