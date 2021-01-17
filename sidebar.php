@@ -21,6 +21,7 @@
                 <source src="<?php the_field('the_video'); ?>" type="video/mp4">
               </video>
             </textarea>
+            <img src="<?php echo $theThumb; ?>" width='273' height='202' style="margin-top:8px;" />
           <?php elseif(get_field('the_iframe')) : ?>
             <textarea class="theImageURL">
               <?php echo get_field('the_iframe'); ?>
