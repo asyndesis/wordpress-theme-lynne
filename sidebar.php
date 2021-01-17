@@ -17,9 +17,11 @@
           <?php endif; ?>
           <?php if(get_field('the_video')): ?>
             <textarea class="theImageURL">
-              <video width="100%" height="100%" poster="<?php echo $theThumb; ?>" controls preload="none">
-                <source src="<?php the_field('the_video'); ?>" type="video/mp4">
-              </video>
+              <div style="background:#000 url('<?php bloginfo("template_url"); ?>/images/loadingBlack.gif') center center no-repeat; height: <?php echo $defaultHeight;?>px; width:<?php echo $defaultWidth;?>px;">
+                <video width="100%" height="100%" poster="<?php echo $theThumb; ?>" controls autoplay>
+                  <source src="<?php echo get_field('the_video'); ?>" type="video/mp4">
+                </video>
+              </div>
             </textarea>
             <img src="<?php echo $theThumb; ?>" width='273' height='202' style="margin-top:8px;" />
           <?php elseif(get_field('the_iframe')) : ?>
