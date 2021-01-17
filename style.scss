@@ -244,11 +244,13 @@ a {
   }
   .widgetCaption {
     overflow: hidden;
+    pointer-events: none;
     width: 100%;
     position: absolute;
     bottom: 0;
-    background: #000;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 20;
+    padding-bottom: 11px;
     p {
       text-shadow: 0px 0px 3px #000000;
       padding: 0 30px;
@@ -466,7 +468,7 @@ body:nth-of-type(1) {
     .post .bubble {
       padding-right: 1px;
       text-align: center;
-      padding-top: 6px;
+      padding-top: 8px;
       margin-left: -30px;
       margin-top: -24px;
       display: none;
@@ -474,7 +476,7 @@ body:nth-of-type(1) {
       background: url("images/theBubble.png") no-repeat;
       height: 21px;
       width: 107px;
-      font-size: 8px;
+      font-size: 9px;
       color: #300;
       font-family: Arial, Helvetica, sans-serif;
     }
