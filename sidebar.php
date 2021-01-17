@@ -5,7 +5,11 @@
     <?php if (is_page($post_object->ID)) : ?>
       <div class="widget">
         <div class="widgetPhoto">
-          <?php $theThumb = get_template_directory_uri() . "/images/reel.jpg"; ?>
+          <?php 
+            $theThumb = get_template_directory_uri() . "/images/reel.jpg"; 
+            $defaultHeight = 480;
+            $defaultWidth = 720;
+          ?>
           <?php if(get_field('the_image')): ?>
             <?php $theThumb = wp_get_attachment_thumb_url(get_field('the_image'), 'thumbnail'); ?>
             <?php $theLarge = wp_get_attachment_image_src( get_field('the_image'), 'medium' ); ?>
