@@ -115,7 +115,9 @@ function setStage() {
     });
   //sideBar Images
   imageFader("in");
-  lightBoxer($("#sideBar .widget .widgetPhoto img"));
+  $("#sideBar .widget").each(function () {
+    lightBoxer($(this));
+  });
   //Link Handling
   $(document)
     .find("a")
