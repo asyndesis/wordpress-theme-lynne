@@ -5,6 +5,7 @@
     <?php if (is_page($post_object->ID)) : ?>
       <div class="widget">
         <div class="widgetPhoto">
+          <?php $theThumb = get_template_directory_uri() . "/images/reel.jpg"; ?>
           <?php if(get_field('the_image')): ?>
             <?php $theThumb = wp_get_attachment_thumb_url(get_field('the_image'), 'thumbnail'); ?>
             <?php $theLarge = wp_get_attachment_image_src( get_field('the_image'), 'medium' ); ?>
@@ -20,6 +21,16 @@
                 <source src="<?php the_field('the_video'); ?>" type="video/mp4">
               </video>
             </textarea>
+          <?php elseif(get_field('the_iframe')) : ?>
+            <textarea class="theImageURL">
+              <?php echo get_field('the_iframe'); ?>
+            </textarea>
+            <img src="<?php echo $theThumb; ?>" width='273' height='202' style="margin-top:8px;" />
+          <?php elseif(get_field('the_embed')) : ?>
+            <textarea class="theImageURL">
+              <?php echo get_field('the_embed'); ?>
+            </textarea>
+            <img src="<?php echo $theThumb; ?>" width='273' height='202' style="margin-top:8px;" />
           <?php elseif (get_field('the_image')): ?>
             <textarea class="theImageURL" style="height:<?php echo $theLarge[2]."px"; ?>; width:<?php echo $theLarge[1]."px"; ?>;">
               <?php echo $theLarge[0] ?>
