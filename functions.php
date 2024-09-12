@@ -3,10 +3,18 @@
   add_action( 'init', 'folio_init' );
   add_action( 'init', 'widget_init' );
   add_action( 'init', 'awards_init' );
-  //add_action( 'wp_enqueue_scripts', 'headStuff' );
+  add_action('wp_enqueue_scripts', 'dequeue_jquery_and_migrate', 100);
 /*------------------------------------------------------------------------------------------------------------------------*/
-function headStuff(){
+function dequeue_jquery_and_migrate() {
+    if (!is_admin()) {
+        // Dequeue jQuery
+        wp_dequeue_script('jquery');
+        wp_deregister_script('jquery');
 
+        // Dequeue jQuery Migrate
+        wp_dequeue_script('jquery-migrate');
+        wp_deregister_script('jquery-migrate');
+    }
 }
 /*------------------------------------------------------------------------------------------------------------------------*/
   function removeHeadLinks() {
